@@ -1,0 +1,36 @@
+.flex{
+    display:  flex;
+}
+.container{
+    padding: 20px 20px;
+    border: 5px solid   blue;
+    margin-bottom: 20px;
+}
+.space-between{
+    justify-content: space-around;
+}
+.left{
+    display: flex;
+    padding-top: 25px;
+    /* justify-content: space-between; */
+    gap: 120px;
+    text-transform: uppercase;
+    padding-right: 200px;
+    color: red;
+}
+#nav-bar{
+    justify-content: space-between;
+}
+
+#image{
+    align-content: center;
+    font-size: 40px;
+}
+#homePage{
+    align-content: center;
+    padding:20px 100px 10px 10px;
+}
+.box{
+    padding: 30px;
+    border: 2px solid red;
+}
