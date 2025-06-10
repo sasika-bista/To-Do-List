@@ -34,11 +34,16 @@ body{
     text-transform: uppercase   ;
     font-size: 30px;
 }
-
+.title{
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin: 20px 10px 20px 10px; /* top right bot left*/
+  color: var(--text-color);
+}
 .toDo {
   max-width: 400px;
-  margin: 20px auto;
-  background: white;
+  margin:  20px 10px 20px 10px;
+  background: var(--danger-color);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -50,10 +55,7 @@ body{
   font-size: 1rem;
 }
 
-#addTask {
-  padding: 10px 15px;
-  margin-left: 10px;
-  font-size: 1rem;
+.addTask {
   cursor: pointer;
 }
 
