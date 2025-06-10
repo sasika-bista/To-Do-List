@@ -75,27 +75,32 @@ function loadTasksFromLocalStorage() {
   });
 }
 
+// may need removing
+const timestamp = document.createElement("small");
+timestamp.className = "timestamp";
+timestamp.textContent = new Date().toLocaleString();
+
+taskIteam.appendChild(timestamp);
+
+const clearAllBtn = document.querySelector(".clearAll");
+
+clearAllBtn.addEventListener("click", () => {
+  taskList.innerHTML = "";
+  saveTasksToLocalStorage();
+});
+
+span.addEventListener("dblclick", () => {
+  const input = document.createElement("input");
+  input.type = "text";
+  input.value = span.textContent;
+  taskIteam.replaceChild(input, span);
+  input.focus();
+
+  input.addEventListener("blur", () => {
+    span.textContent = input.value;
+    taskIteam.replaceChild(span, input);
+    saveTasksToLocalStorage();
+  });
+});
+
 window.addEventListener("DOMContentLoaded", loadTasksFromLocalStorage);
-
-function saveTasksToLocalStorage() {
-  const tasks = [];
-  taskList.querySelectorAll("li").forEach((li) => {
-    tasks.push({
-      text: li.querySelector(".task-text").textContent,
-      completed: li.classList.contains("completed"),
-    });
-  });
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-}
-
-function loadTasksFromLocalStorage() {
-  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  tasks.forEach((task) => {
-    addTask(task.text);
-    if (task.completed) {
-      const lastTask = taskList.lastElementChild;
-      lastTask.classList.add("completed");
-      lastTask.querySelector('input[type="checkbox"]').checked = true;
-    }
-  });
-}

@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
     <div class="container">
-        <nav class="nav-bar flex">
-            <div class="logo">
-                <h1>LOGO</h1>
-            </div>
-            <div class="left flex">
-                <div class="home">home</div>
-                <div class="about">about</div>
-                <div class="settings">setting</div>
-            </div>
-
-        </nav>
+      <nav class="nav-bar flex">
+        <div class="logo">
+          <h1>LOGO</h1>
+        </div>
+        <div class="left flex">
+          <div class="home">home</div>
+          <div class="about">about</div>
+          <div class="settings">setting</div>
+        </div>
+      </nav>
     </div>
 
     <div class="container">
+      <div class="tonav">
         <div class="title">TO DO</div>
-        <div class="toDo">
-            <input type="text" class="inToDO" placeholder="enter new task">
-            <button class="addTask">ADD</button>
+        <button class="clearAll">Clear All</button>
+      </div>
 
-            <ul class="taskList"></ul>
-        </div>
+      <div class="toDo">
+        <input type="text" class="inToDO" placeholder="enter new task" />
+        <button class="addTask">ADD</button>
+
+        <ul class="taskList"></ul>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
